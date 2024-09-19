@@ -18,7 +18,7 @@ const List: React.FC<RestaurantListProps> = ({
   onToggleFavorite,
 }) => {
   return (
-    <Flex flex={1} flexDirection="column" gap={4}>
+    <Flex flex={1} flexDirection="column" gap={4} p={4}>
       {restaurants.map((restaurant) => (
         <Card
           key={restaurant.id}
