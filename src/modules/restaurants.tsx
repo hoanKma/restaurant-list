@@ -96,7 +96,7 @@ const Restaurants: React.FC = () => {
   };
 
   return (
-    <Flex bgColor={"green.100"} w={"full"} h={"full"}>
+    <Flex>
       <List restaurants={restaurants} onToggleFavorite={toggleFavorite} />
     </Flex>
   );

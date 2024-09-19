@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Card from "./card";
 
 interface Restaurant {
@@ -18,7 +18,7 @@ const List: React.FC<RestaurantListProps> = ({
   onToggleFavorite,
 }) => {
   return (
-    <SimpleGrid columns={{ sm: 2, md: 3 }} spacing={5}>
+    <Flex flex={1} flexDirection="column" gap={4}>
       {restaurants.map((restaurant) => (
         <Card
           key={restaurant.id}
@@ -26,7 +26,7 @@ const List: React.FC<RestaurantListProps> = ({
           onToggleFavorite={onToggleFavorite}
         />
       ))}
-    </SimpleGrid>
+    </Flex>
   );
 };
 
