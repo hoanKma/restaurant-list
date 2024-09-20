@@ -67,13 +67,13 @@ const Card: React.FC<{ restaurant: RestaurantCardProps }> = ({
         </Flex>
       )}
 
-      <Flex justifyContent="space-between" align="center" gap={1}>
-        <Text color="#344054" fontWeight="semibold" noOfLines={1}>
+      <Flex flex={1} align="center" gap={1}>
+        <Text color="#344054" fontWeight="semibold" noOfLines={1} w={"full"}>
           {name}
         </Text>
-        <Flex align="center" gap={1} w={"fit-content"}>
+        <Flex minW={"fit-content"} align="center" gap={1}>
           <StarIcon />
-          <Text color="#344054" w={"fit-content"}>
+          <Text color="#344054">
             {rating} ({ratingCount})
           </Text>
         </Flex>

@@ -1,5 +1,6 @@
 import { Box, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { SearchIcon } from "../../assets/icon/SearchIcon";
 import useDebounce from "../../ultils/useDebounce";
 
@@ -12,6 +13,9 @@ const InputSearch: React.FC<InputSearchProps> = ({
 }) => {
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearchValue = useDebounce(searchValue, 500);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  console.log("searchParams", searchParams.get("search"));
 
   const onChangeValue = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,10 +24,13 @@ const InputSearch: React.FC<InputSearchProps> = ({
     []
   );
 
-  // useEffect(() => {
-  //   if (debouncedSearchValue) {
-  //   }
-  // }, [debouncedSearchValue]);
+  useEffect(() => {
+    if (debouncedSearchValue) {
+      setSearchParams({ search: debouncedSearchValue });
+    } else {
+      setSearchParams();
+    }
+  }, [debouncedSearchValue, setSearchParams]);
 
   return (
     <Box p={4}>
