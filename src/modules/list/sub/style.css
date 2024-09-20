@@ -14,11 +14,15 @@
 
 .swiper-pagination {
   height: 16px;
-  width: 50px !important;
-  left: 46% !important;
+  width: fit-content !important;
   border-radius: 12px;
+  left: 46% !important;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mySwiper {
+  border-radius: 24px;
 }
