@@ -1,7 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { memo } from "react";
 import { FeaturedIcon } from "../../assets/FeaturedIcon";
-import { HeartIcon } from "../../assets/HeartIcon";
 import { StarIcon } from "../../assets/StarIcon";
 import ImageSlider from "./image-slider";
 
@@ -17,16 +16,7 @@ const Card: React.FC<RestaurantCardProps> = () => {
   return (
     <Flex w="full" flexDirection={"column"} gap={2} position={"relative"}>
       <ImageSlider />
-      <Flex
-        position={"absolute"}
-        right={2}
-        top={2}
-        bg={"red.100"}
-        p={2}
-        borderRadius={"full"}
-      >
-        <HeartIcon />
-      </Flex>
+
       <Flex align={"center"} gap={1}>
         <FeaturedIcon />
         <Text color={"#FF692E"} fontSize={"xs"}>
@@ -52,9 +42,6 @@ const Card: React.FC<RestaurantCardProps> = () => {
       <Text color="#475467" noOfLines={1}>
         {"오사카 나카노시마 · 야키토리 · 4~6만원"}
       </Text>
-      {/* <Button mt={2} onClick={() => onToggleFavorite(id)}>
-        {favorite ? "Unmark Favorite" : "Mark as Favorite"}
-      </Button> */}
     </Flex>
   );
 };

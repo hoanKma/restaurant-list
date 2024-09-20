@@ -1,4 +1,5 @@
 // src/pages/Restaurants.tsx
+import { Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import List from "./sub/list";
 
@@ -94,7 +95,11 @@ const Restaurants: React.FC = () => {
     );
   };
 
-  return <List restaurants={restaurants} onToggleFavorite={toggleFavorite} />;
+  return (
+    <Flex flex={1}>
+      <List restaurants={restaurants} onToggleFavorite={toggleFavorite} />
+    </Flex>
+  );
 };
 
 export default Restaurants;
